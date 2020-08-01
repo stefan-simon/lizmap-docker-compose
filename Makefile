@@ -10,7 +10,7 @@ QGIS_VERSION_TAG:=3.12
 QGIS_MAP_WORKERS:=1
 WPS_NUM_WORKERS:=1
 
-LIZMAP_PORT:=127.0.0.1:8090
+LIZMAP_PORT:=95.217.10.104:8090
 OWS_PORT:=127.0.0.1:8091
 WPS_PORT:=127.0.0.1:8092
 
@@ -43,7 +43,7 @@ run: env
 	@echo "NOTE: To restart a service, consider:"
 	@echo "  > docker-compose restart <service>"
 	docker-compose rm -f || true
-	docker-compose up
+	docker-compose up -d
 
 start: run
 

@@ -70,10 +70,12 @@ services:
     image: nginx:1
     volumes:
       - ${LIZMAP_DIR}/etc/nginx.conf:/etc/nginx/nginx.conf
+      - ${LIZMAP_DIR}/etc/ssl:/etc/ssl
       - ${LIZMAP_DIR}/var/log/nginx:/var/log/nginx
       - ${LIZMAP_DIR}:/srv/lizmap
     ports:
-      - ${LIZMAP_PORT}:80
+      - 80:80
+      - 443:443
     depends_on:
       - lizmap
 
